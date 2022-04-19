@@ -29,3 +29,4 @@ https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_storage_setitem_sess
 
 {"email":"eve.holt@reqres.in","password":"cityslicka"}
 https://reqres.in/
+ng g m app-login --routing

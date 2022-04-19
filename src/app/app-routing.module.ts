@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailsComponent } from './components/details/details.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuard } from './app-shared/services/auth-guard.service';
 
 const routes: Routes = [
     {
@@ -13,7 +10,7 @@ const routes: Routes = [
     },
     { 
         path: 'login', 
-        component: LoginComponent 
+        loadChildren: () => import('./app-login/app-login.module').then(m => m.AppLoginModule)
     },
     {
         path: 'home',
@@ -21,16 +18,16 @@ const routes: Routes = [
         data: {
             authFailRedirection: '/login'
         },
-        component: HomeComponent
-    },
+        loadChildren: () => import('./app-home/app-home.module').then(m => m.AppHomeModule)
+    }/* ,
     {
         path: 'home/:id',
         canActivate: [AuthGuard],
         data: {
             authFailRedirection: '/login'
         },
-        component: DetailsComponent
-    }
+        loadChildren: () => import('./app-home/app-home.module').then(m => m.AppHomeModule)
+    } */
 ]
 
 
