@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
       console.log('Data provide in currentRoute',route);
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          let isRouteAccessible = false;
+          let isRouteAccessible = true;
           if(isRouteAccessible) {
             
             resolve(true);

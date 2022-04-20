@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/app-login/services/auth.service';
 })
 export class DetailsComponent implements OnInit {
   post: any;
+  likePostValue: any;
 
   constructor(
     private authService: AuthService,
@@ -20,6 +21,11 @@ export class DetailsComponent implements OnInit {
       this.post = data;
       console.log(data);
     });
+  }
+
+  likePost(event:any) {
+    console.log(event);
+    this.likePostValue = event;
   }
   ngOnInit(): void {
     this.activateRoute.params.subscribe((res)=>{

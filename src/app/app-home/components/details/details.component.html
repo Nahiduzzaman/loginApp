@@ -1,7 +1,3 @@
-<div>
-    <div *ngIf="post"> <!--Remove ngIf will throw error-->
-        <p>Title : {{post.title}}</p>
-        <p>Comments : {{post.body}}</p>
-    </div>
-</div>
+<app-post-detail *ngIf="post" [post]="post"  (likeThePostEvent)="likePost($event)"></app-post-detail>
+<p *ngIf="likePostValue">This post has been <b>{{likePostValue}}</b> from child Component</p>
 
